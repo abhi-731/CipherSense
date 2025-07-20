@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CipherSense - Home</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="flex items-center justify-center min-h-screen p-4">
+
+    <div id="mainContainer" class="px-8 py-6 rounded-3xl w-full max-w-5xl" style="transform: scale(0.9);">
+        <h1 class="text-4xl font-extrabold mb-1 text-center leading-tight tracking-wide">
+            CipherSense
+        </h1>
+        <p class="text-center mb-4 text-xl font-medium">Password Strength Analyzer</p>
+
+        <div id="mainMenuSection">
+            <p class="text-center mb-6 text-lg leading-relaxed">
+                Welcome to CipherSense! Your all-in-one tool for creating and evaluating secure passwords. Choose an option to get started:
+            </p>
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                <div class="section-bg p-5 rounded-2xl hover:border-pink-400 transition-colors duration-300">
+                    <h3 class="text-2xl font-bold mb-3">🔑 Generate Passwords</h3>
+                    <p class="mb-3">Create strong, random passwords tailored to your exact needs.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-start"><span class="mr-3 text-green-400">✓</span><span><b>Custom Length:</b> Choose from 8 to 32 characters.</span></li>
+                        <li class="flex items-start"><span class="mr-3 text-green-400">✓</span><span><b>Character Control:</b> Select uppercase, lowercase, numbers, and symbols.</span></li>
+                        <li class="flex items-start"><span class="mr-3 text-green-400">✓</span><span><b>Instant & Secure:</b> Get a cryptographically secure password in one click.</span></li>
+                    </ul>
+                </div>
+                <div class="section-bg p-5 rounded-2xl hover:border-orange-400 transition-colors duration-300">
+                    <h3 class="text-2xl font-bold mb-3">🔬 Analyze Passwords</h3>
+                    <p class="mb-3">Check your password's strength with a detailed, real-time analysis.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-start"><span class="mr-3 text-green-400">✓</span><span><b>Strength Meter:</b> Visual feedback from "Very Weak" to "Strong".</span></li>
+                        <li class="flex items-start"><span class="mr-3 text-green-400">✓</span><span><b>Crack Time Estimate:</b> See how long an attacker would need to guess it.</span></li>
+                        <li class="flex items-start"><span class="mr-3 text-green-400">✓</span><span><b>Actionable Advice:</b> Get clear recommendations to improve security.</span></li>
+                    </ul>
+                </div>
+            </div>
+            <p class="text-center mb-4 text-sm">
+                Created by: Abhinav T
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4 mb-4">
+                <a href="generate.html" class="primary-button text-center flex-1 font-bold py-3 px-6 rounded-lg transition">
+                    Generate Password
+                </a>
+                <a href="analyze.html" class="primary-button text-center flex-1 font-bold py-3 px-6 rounded-lg transition">
+                    Analyze Password
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

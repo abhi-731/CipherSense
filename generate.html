@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CipherSense - Generate Password</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="flex items-center justify-center min-h-screen p-4">
+
+    <div id="mainContainer" class="px-8 py-6 rounded-3xl w-full max-w-5xl" style="transform: scale(0.9);">
+        <h1 class="text-4xl font-extrabold mb-1 text-center leading-tight tracking-wide">
+            CipherSense
+        </h1>
+        <p class="text-center mb-4 text-xl font-medium">Password Strength Analyzer</p>
+        
+        <div id="generateSection">
+            <h2 class="text-3xl font-bold mb-4 text-center">Generate a New Password</h2>
+            <div class="mb-4 relative">
+                <label for="generatedPassword" class="block text-sm font-semibold mb-2">Generated Password:</label>
+                <div class="relative">
+                    <input type="text" id="generatedPassword" class="input-field w-full pr-10 px-4 py-3 border rounded-xl focus:outline-none focus:ring-3 text-lg transition duration-200" placeholder="Click Generate Password" readonly />
+                    <button type="button" id="toggleGeneratedPassword" class="absolute inset-y-0 right-0 pr-3 flex items-center toggle-password-button">
+                        <svg id="eyeOpenGenerated" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>
+                        <svg id="eyeClosedGenerated" class="h-5 w-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.542-7 .986-3.12 3.208-5.69 5.924-7.468M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.98 8.223A10.477 10.477 0 001.958 12c1.274 4.057 5.064 7 9.542 7 2.185 0 4.23-.725 5.924-1.968M12 12a3 3 0 00-3-3m0 0l-1.98-1.777M18.05 15.777A10.477 10.477 0 0022.042 12c-1.274-4.057-5.064-7-9.542-7-1.279 0-2.5.22-3.64.612" /></svg>
+                    </button>
+                </div>
+            </div>
+            <div class="section-bg p-5 rounded-xl mb-4">
+                <h3 class="font-semibold mb-3 text-xl">Customization Options:</h3>
+                <div class="mb-3">
+                    <label for="passwordLength" class="block text-sm font-medium mb-2">Length: <span id="lengthValue">16</span></label>
+                    <input type="range" id="passwordLength" min="8" max="32" value="16" class="w-full h-2 rounded-lg appearance-none cursor-pointer accent-purple-500">
+                </div>
+                <div class="grid grid-cols-2 gap-2 text-sm">
+                    <label class="flex items-center"><input type="checkbox" id="includeUppercase" checked class="form-checkbox h-4 w-4 text-purple-600 rounded border-gray-500"><span class="ml-2">Uppercase</span></label>
+                    <label class="flex items-center"><input type="checkbox" id="includeLowercase" checked class="form-checkbox h-4 w-4 text-purple-600 rounded border-gray-500"><span class="ml-2">Lowercase</span></label>
+                    <label class="flex items-center"><input type="checkbox" id="includeNumbers" checked class="form-checkbox h-4 w-4 text-purple-600 rounded border-gray-500"><span class="ml-2">Numbers</span></label>
+                    <label class="flex items-center"><input type="checkbox" id="includeSpecial" checked class="form-checkbox h-4 w-4 text-purple-600 rounded border-gray-500"><span class="ml-2">Special Chars</span></label>
+                </div>
+            </div>
+            <div class="flex flex-col sm:flex-row justify-between gap-4 mb-4">
+                <button id="generatePassword" class="primary-button flex-1 font-bold py-2 px-4 rounded-lg">Generate Password</button>
+                <button id="copyGeneratedPassword" class="secondary-button flex-1 font-bold py-2 px-4 rounded-lg">Copy Password</button>
+            </div>
+            <a href="index.html" class="secondary-button text-center block w-full font-bold py-2 px-4 rounded-lg mt-4">Back to Menu</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

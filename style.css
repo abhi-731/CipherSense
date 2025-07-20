@@ -1,0 +1,136 @@
+/* --- Color Palette Extracted from Image --- */
+:root {
+    --dark-purple: #2C204B;
+    --vibrant-magenta: #B83280;
+    --warm-orange: #D76957;
+    --light-cream: #F4E7B3;
+    --off-white: #E5E7EB;
+}
+
+/* --- General Body and Font Styles --- */
+body {
+    font-family: 'Source Code Pro', monospace;
+    background: linear-gradient(to right bottom, var(--dark-purple), #1a142f);
+    color: var(--off-white);
+}
+
+/* --- Main Container & Sections --- */
+#mainContainer {
+    background-color: #3a2c5f; /* A slightly lighter purple for the container */
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.4);
+}
+.section-bg {
+    background-color: rgba(44, 32, 75, 0.7); /* var(--dark-purple) with opacity */
+    border-color: #4a3b70;
+}
+
+/* --- Text and Headings --- */
+h1, h2, h3 {
+    color: var(--light-cream);
+    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+.text-gray-300, .text-gray-200, .text-gray-400 {
+    color: var(--off-white);
+}
+.font-bold { color: #FFFFFF; }
+
+/* --- Buttons --- */
+.primary-button {
+    background: linear-gradient(to right, var(--vibrant-magenta), var(--warm-orange));
+    color: white;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 15px -2px rgba(0, 0, 0, 0.3);
+}
+.primary-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px -2px rgba(0, 0, 0, 0.4);
+}
+.secondary-button {
+    background-color: #554282;
+    color: var(--off-white);
+}
+.secondary-button:hover {
+    background-color: #6a53a0;
+}
+
+/* --- Input Fields & Sliders --- */
+.input-field {
+    background-color: var(--dark-purple);
+    border: 1px solid #1a142f; /* Darker border to blend */
+    color: var(--off-white);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5), inset 0 -1px 1px rgba(255, 255, 255, 0.1);
+    transition: box-shadow 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+.input-field:focus {
+    --tw-ring-color: var(--vibrant-magenta);
+    box-shadow: none; /* Remove inset shadow on focus */
+    border-color: #4a3b70;
+}
+input[type="range"].accent-purple-500 {
+    accent-color: var(--vibrant-magenta);
+}
+input[type="checkbox"].text-purple-600:checked {
+    background-color: var(--vibrant-magenta);
+}
+
+/* --- Strength Bar (UPDATED with Track) --- */
+.strength-bar-track {
+    height: 12px;
+    border-radius: 9999px;
+    background-color: var(--dark-purple);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5), inset 0 -1px 1px rgba(255, 255, 255, 0.1);
+}
+.strength-bar {
+    height: 100%;
+    width: 0; /* Starts empty */
+    border-radius: 9999px;
+    background-color: transparent;
+    transition: width 0.4s ease-in-out, background-color 0.4s ease-in-out;
+}
+.strength-bar.bg-red-500 { background-color: #ef4444; }      /* Red */
+.strength-bar.bg-orange-500 { background-color: #f97316; }   /* Orange */
+.strength-bar.bg-yellow-500 { background-color: #eab308; }   /* Yellow */
+.strength-bar.bg-green-500 { background-color: #22c55e; }    /* Green */
+#strengthText.yellow-text { color: #333; } /* For better contrast on yellow */
+
+/* --- Feedback List & Tooltips --- */
+.feedback-item.text-green-400 { color: #A6EAA1; }
+.feedback-item.text-red-400 { color: #F6A3A3; }
+.tooltip-text {
+    background-color: rgba(26, 20, 47, 0.95); /* Opaque dark purple */
+    color: var(--off-white);
+}
+.tooltip-text::after {
+    border-top-color: rgba(26, 20, 47, 0.95);
+}
+
+/* --- Custom Pop-up Message Styles --- */
+@keyframes popup-fade {
+    0% { opacity: 0; transform: translate(-50%, -80%); }
+    20% { opacity: 1; transform: translate(-50%, -120%); }
+    80% { opacity: 1; transform: translate(-50%, -120%); }
+    100% { opacity: 0; transform: translate(-50%, -80%); }
+}
+.popup-message {
+    position: fixed;
+    left: 50%;
+    padding: 8px 16px;
+    border-radius: 8px;
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 500;
+    z-index: 1000;
+    pointer-events: none;
+    animation: popup-fade 2s ease-in-out forwards;
+}
+.popup-message.success {
+    background-color: #2e7d32;
+}
+.popup-message.error {
+    background-color: #c62828;
+}
+
+/* Utility (Kept from original for toggling) */
+.toggle-password-button:hover {
+     background-color: rgba(244, 231, 179, 0.1);
+}
